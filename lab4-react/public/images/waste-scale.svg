@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" role="img"><title>A scale weighing a full bin of wasted food against a single plate</title>
+<rect width="520" height="380" rx="20" fill="#ffffff"/>
+<rect x="250" y="70" width="20" height="250" fill="#1e2e2b"/><rect x="170" y="320" width="180" height="20" rx="8" fill="#1e2e2b"/>
+<g transform="rotate(-8 260 90)"><rect x="70" y="82" width="380" height="14" rx="7" fill="#1e2e2b"/>
+<path d="M92 96 50 190h96z" fill="none" stroke="#1e2e2b" stroke-width="4"/><path d="M428 96 386 190h96z" fill="none" stroke="#1e2e2b" stroke-width="4"/>
+<rect x="40" y="190" width="116" height="12" rx="6" fill="#1e2e2b"/><rect x="376" y="190" width="116" height="12" rx="6" fill="#1e2e2b"/>
+<ellipse cx="434" cy="180" rx="44" ry="10" fill="#d5e2de" stroke="#1e2e2b" stroke-width="3"/><circle cx="434" cy="168" r="11" fill="#3f7a2f"/></g>
+<g><rect x="30" y="170" width="120" height="50" rx="4" fill="none"/></g>
+<g transform="translate(75 112)"><path d="M0 20h80l-10 86H10z" fill="#c8391e" stroke="#1e2e2b" stroke-width="4"/><rect x="-6" y="8" width="92" height="14" rx="5" fill="#1e2e2b"/>
+<circle cx="18" cy="2" r="12" fill="#3f7a2f" stroke="#1e2e2b" stroke-width="3"/><circle cx="44" cy="-6" r="15" fill="#f4dd92" stroke="#1e2e2b" stroke-width="3"/><circle cx="66" cy="3" r="11" fill="#fbe3dc" stroke="#1e2e2b" stroke-width="3"/></g>
+<text x="260" y="366" text-anchor="middle" font-size="19" fill="#1e2e2b" font-family="Segoe UI, Arial, sans-serif">wasted vs eaten</text></svg>

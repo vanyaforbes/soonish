@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" role="img"><title>Three expiring ingredients going into a spark and coming out as one recipe card</title>
+<rect width="520" height="380" rx="20" fill="#1e2e2b"/>
+<g transform="rotate(-3 105 83)"><rect x="40" y="70" width="130" height="26" fill="#f4dd92"/><text x="105" y="88" text-anchor="middle" font-size="14" fill="#1e2e2b" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">kefir: today</text></g><g transform="rotate(2 105 171)"><rect x="40" y="158" width="130" height="26" fill="#f4dd92"/><text x="105" y="176" text-anchor="middle" font-size="14" fill="#1e2e2b" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">rice: 1 day</text></g><g transform="rotate(-2 105 259)"><rect x="40" y="246" width="130" height="26" fill="#f4dd92"/><text x="105" y="264" text-anchor="middle" font-size="13" fill="#1e2e2b" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">carrots: 2 days</text></g>
+<path d="M182 83 232 170M182 171h50M182 259l50-74" stroke="#d5e2de" stroke-width="4" fill="none"/>
+<path d="M264 124l14 38 38 14-38 14-14 38-14-38-38-14 38-14z" fill="#f4dd92"/>
+<path d="M326 176h34" stroke="#d5e2de" stroke-width="4"/><path d="M352 164l14 12-14 12" stroke="#d5e2de" stroke-width="4" fill="none"/>
+<rect x="372" y="86" width="122" height="180" rx="10" fill="#ffffff"/>
+<text x="433" y="122" text-anchor="middle" font-size="17" fill="#1e2e2b" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">tonight:</text>
+<rect x="388" y="138" width="90" height="10" rx="5" fill="#d5e2de"/><rect x="388" y="160" width="74" height="10" rx="5" fill="#d5e2de"/><rect x="388" y="182" width="84" height="10" rx="5" fill="#d5e2de"/>
+<circle cx="433" cy="228" r="20" fill="#3f7a2f"/><path d="M423 228l8 8 13-15" stroke="#ffffff" stroke-width="4" fill="none"/>
+<text x="260" y="340" text-anchor="middle" font-size="19" fill="#d5e2de" font-family="Segoe UI, Arial, sans-serif">a proposed AI idea, not built yet</text></svg>

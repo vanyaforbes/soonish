@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img"><title>Three steps: a marker writes a label, a clock counts down, a hand passes a box on</title>
+<rect width="520" height="340" rx="20" fill="#e9f1ef"/>
+<g transform="rotate(-3 111 95)"><rect x="46" y="82" width="130" height="26" fill="#f4dd92"/><text x="111" y="100" text-anchor="middle" font-size="17" fill="#1e2e2b" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">mine: Fri</text></g>
+<g transform="rotate(35 150 120)"><rect x="140" y="30" width="24" height="86" rx="4" fill="#1e2e2b"/><path d="M140 116h24l-12 22z" fill="#c8391e"/></g>
+<text x="110" y="210" text-anchor="middle" font-size="20" fill="#1e2e2b" font-family="Segoe UI, Arial, sans-serif">label</text>
+<circle cx="262" cy="110" r="60" fill="#ffffff" stroke="#1e2e2b" stroke-width="5"/><path d="M262 66v44l30 18" stroke="#c8391e" stroke-width="7" fill="none" stroke-linecap="round"/>
+<text x="262" y="210" text-anchor="middle" font-size="20" fill="#1e2e2b" font-family="Segoe UI, Arial, sans-serif">watch</text>
+<rect x="372" y="80" width="104" height="66" rx="8" fill="#e0efd8" stroke="#1e2e2b" stroke-width="3"/><rect x="368" y="70" width="112" height="14" rx="5" fill="#3f7a2f" stroke="#1e2e2b" stroke-width="3"/><g transform="rotate(3 424 113)"><rect x="378" y="100" width="92" height="26" fill="#f4dd92"/><text x="424" y="118" text-anchor="middle" font-size="16" fill="#1e2e2b" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">free!</text></g>
+<text x="424" y="210" text-anchor="middle" font-size="20" fill="#1e2e2b" font-family="Segoe UI, Arial, sans-serif">pass on</text>
+<path d="M60 262h400" stroke="#1e2e2b" stroke-width="4" stroke-dasharray="4 12" stroke-linecap="round"/>
+<text x="260" y="304" text-anchor="middle" font-size="24" fill="#1e2e2b" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">nothing gets forgotten</text></svg>
