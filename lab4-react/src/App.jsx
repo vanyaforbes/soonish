@@ -2,9 +2,23 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import ProblemPage from "./pages/ProblemPage.jsx";
+import HowItWorksPage from "./pages/HowItWorksPage.jsx";
+import ShelfGuidePage from "./pages/ShelfGuidePage.jsx";
+import FridgeRulesPage from "./pages/FridgeRulesPage.jsx";
+import AiRescuePage from "./pages/AiRescuePage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import ContactPage from "./pages/ContactPage.jsx";
 
 const ROUTES = [
   { path: "home", label: "Home", page: HomePage },
+  { path: "problem", label: "The problem", page: ProblemPage },
+  { path: "how-it-works", label: "How it works", page: HowItWorksPage },
+  { path: "shelf-guide", label: "Shelf guide", page: ShelfGuidePage },
+  { path: "fridge-rules", label: "Fridge rules", page: FridgeRulesPage },
+  { path: "ai-rescue", label: "AI rescue", page: AiRescuePage },
+  { path: "about", label: "About", page: AboutPage },
+  { path: "contact", label: "Contact", page: ContactPage },
 ];
 
 function readRoute() {
