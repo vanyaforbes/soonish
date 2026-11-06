@@ -10,6 +10,7 @@ import AiRescuePage from "./pages/AiRescuePage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import FridgePage from "./pages/FridgePage.jsx";
+import RegisterPage from "./pages/RegisterPage.jsx";
 
 const ROUTES = [
   { path: "home", label: "Home", page: HomePage },
@@ -21,6 +22,7 @@ const ROUTES = [
   { path: "ai-rescue", label: "AI rescue", page: AiRescuePage },
   { path: "about", label: "About", page: AboutPage },
   { path: "contact", label: "Contact", page: ContactPage },
+  { path: "register", label: "Register", page: RegisterPage }
 ];
 
 function readRoute() {
