@@ -9,9 +9,11 @@ import FridgeRulesPage from "./pages/FridgeRulesPage.jsx";
 import AiRescuePage from "./pages/AiRescuePage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
+import FridgePage from "./pages/FridgePage.jsx";
 
 const ROUTES = [
   { path: "home", label: "Home", page: HomePage },
+  { path: "fridge", label: "My fridge", page: FridgePage },
   { path: "problem", label: "The problem", page: ProblemPage },
   { path: "how-it-works", label: "How it works", page: HowItWorksPage },
   { path: "shelf-guide", label: "Shelf guide", page: ShelfGuidePage },
