@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Author: Abdulaziz, group 2601 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The planned AI feature: recipe ideas built around the food closest to its date.">
+  <link rel="icon" href="images/icons/fridge.svg">
+  <title>AI Rescue Recipes: our planned AI feature | Soonish</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html">Soonish</a>
+      <span id="user-chip" class="user-chip"></span>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fridge.html">My fridge</a></li>
+          <li><a href="problem.html">The problem</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="shelf-guide.html">Shelf guide</a></li>
+          <li><a href="fridge-rules.html">Fridge rules</a></li>
+          <li><a href="ai-rescue.html" aria-current="page">AI rescue</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page-title">
+      <h1>AI Rescue Recipes</h1>
+      <p>Our planned AI feature turns the food closest to its date into a simple meal. It is a plan and is not built yet.</p>
+    </div>
+    <section class="section section-white">
+      <div class="wrap split">
+        <div>
+          <h2>How it would work</h2>
+          <ul class="tick-list">
+            <li><strong>Input:</strong> items expiring within two days, with portions, plus an optional diet choice.</li>
+            <li><strong>Output:</strong> up to three cheap recipes, starting with the most urgent item.</li>
+            <li><strong>Where:</strong> a Rescue button on the shared fridge list.</li>
+            <li><strong>Approach:</strong> connect an existing language model through an API.</li>
+          </ul>
+          <p>A small server would call the model, so the secret API key never reaches the browser.</p>
+        </div>
+        <img src="images/ai-rescue.svg" alt="Three expiring ingredients, kefir, rice and carrots, passing through a spark and becoming one recipe card." width="520" height="380">
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap split">
+        <div class="ai-example">
+          <h3>Example result (written by hand)</h3>
+          <p><strong>Input:</strong> kefir (today), rice (1 day), carrots (2 days).</p>
+          <p><strong>Suggestion:</strong> Carrot rice with a kefir sauce. Fry the grated carrots, add the rice, then serve with kefir, salt and garlic.</p>
+          <p><strong>Still needed:</strong> oil, garlic.</p>
+        </div>
+        <div>
+          <h2>Honest limits</h2>
+          <ul class="tick-list">
+            <li>The model can invent steps, so recipes need a human eye.</li>
+            <li>It cannot tell if food is safe. Students still check it.</li>
+            <li>It does not know allergies unless a user tells it.</li>
+            <li>Each request costs money and needs internet access.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <h2>Soonish</h2>
+          <p>A shared-fridge helper for student dorms.</p>
+        </div>
+        <div>
+          <h2>Sources</h2>
+          <ul>
+            <li><a href="https://www.unep.org/resources/publication/food-waste-index-report-2024">UNEP Food Waste Index 2024</a></li>
+            <li><a href="https://sdgs.un.org/goals/goal12">UN SDG 12</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="contact.html">Contact and feedback</a></li>
+            <li><a href="about.html">About the project</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">Web Programming student project, 2026. All illustrations are original.</p>
+    </div>
+  </footer>
+  <script src="js/storage.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Author: Abdulaziz, group 2601 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register to join your floor on Soonish.">
+  <link rel="icon" href="images/icons/fridge.svg">
+  <title>Create your Soonish account</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html">Soonish</a>
+      <span id="user-chip" class="user-chip"></span>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fridge.html">My fridge</a></li>
+          <li><a href="problem.html">The problem</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="shelf-guide.html">Shelf guide</a></li>
+          <li><a href="fridge-rules.html">Fridge rules</a></li>
+          <li><a href="ai-rescue.html">AI rescue</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="register.html" aria-current="page">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page-title">
+      <h1>Join your floor</h1>
+      <p>Create a simulated account. It stays on this device, and your password is never saved.</p>
+    </div>
+    <section class="section section-white">
+      <div class="wrap auth-layout">
+        <form id="register-form" class="form-box" novalidate>
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name">
+            <span id="fullName-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email">
+            <span id="email-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="birthday">Birthday</label>
+            <input id="birthday" name="birthday" type="date" autocomplete="bday">
+            <span id="birthday-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="floor">Dorm floor</label>
+            <select id="floor" name="floor">
+              <option value="">Choose a floor</option>
+              <option value="1">Floor 1</option>
+              <option value="2">Floor 2</option>
+              <option value="3">Floor 3</option>
+              <option value="4">Floor 4</option>
+              <option value="5">Floor 5</option>
+            </select>
+            <span id="floor-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="new-password">
+            <span id="password-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="confirmPassword">Confirm password</label>
+            <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password">
+            <span id="confirmPassword-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label class="check-row" for="consent">
+              <input id="consent" name="consent" type="checkbox">
+              <span>I accept the <a href="fridge-rules.html">fridge rules</a>.</span>
+            </label>
+            <span id="consent-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <button class="btn" type="submit">Create account</button>
+          <p id="register-message" class="form-message" role="status"></p>
+        </form>
+        <div class="card">
+          <span class="icon-tag"><img src="images/icons/label.svg" alt=""></span>
+          <h3>Your password</h3>
+          <p>Use at least 8 characters with an uppercase letter, a lowercase letter and a digit.</p>
+          <p>Already registered? <a href="login.html">Log in</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <h2>Soonish</h2>
+          <p>A shared-fridge helper for student dorms.</p>
+        </div>
+        <div>
+          <h2>Sources</h2>
+          <ul>
+            <li><a href="https://www.unep.org/resources/publication/food-waste-index-report-2024">UNEP Food Waste Index 2024</a></li>
+            <li><a href="https://sdgs.un.org/goals/goal12">UN SDG 12</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="contact.html">Contact and feedback</a></li>
+            <li><a href="about.html">About the project</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">Web Programming student project, 2026. All illustrations are original.</p>
+    </div>
+  </footer>
+  <script src="js/storage.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

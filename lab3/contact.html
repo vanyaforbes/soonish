@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Author: Abdulaziz, group 2601 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send the Soonish team feedback or ask to bring Soonish to your dorm floor.">
+  <link rel="icon" href="images/icons/fridge.svg">
+  <title>Contact and feedback | Soonish</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html">Soonish</a>
+      <span id="user-chip" class="user-chip"></span>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fridge.html">My fridge</a></li>
+          <li><a href="problem.html">The problem</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="shelf-guide.html">Shelf guide</a></li>
+          <li><a href="fridge-rules.html">Fridge rules</a></li>
+          <li><a href="ai-rescue.html">AI rescue</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page-title">
+      <h1>Contact and feedback</h1>
+      <p>Tell us about your fridge, or ask how to start Soonish on your floor.</p>
+    </div>
+    <section class="section section-white">
+      <div class="wrap split split-wide">
+        <form class="form-box" action="contact.html" method="get">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option>Start Soonish on my floor</option>
+              <option>Feedback about the website</option>
+              <option>Other question</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+        <div class="card">
+          <span class="icon-tag"><img src="images/icons/mail.svg" alt=""></span>
+          <h3>What happens next</h3>
+          <p>This is a student project, so the form does not send anything yet. It shows how feedback will work on the finished website.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <h2>Soonish</h2>
+          <p>A shared-fridge helper for student dorms.</p>
+        </div>
+        <div>
+          <h2>Sources</h2>
+          <ul>
+            <li><a href="https://www.unep.org/resources/publication/food-waste-index-report-2024">UNEP Food Waste Index 2024</a></li>
+            <li><a href="https://sdgs.un.org/goals/goal12">UN SDG 12</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="contact.html">Contact and feedback</a></li>
+            <li><a href="about.html">About the project</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">Web Programming student project, 2026. All illustrations are original.</p>
+    </div>
+  </footer>
+  <script src="js/storage.js"></script>
+</body>
+</html>

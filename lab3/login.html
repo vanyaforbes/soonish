@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Author: Abdulaziz, group 2601 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in to your simulated Soonish account.">
+  <link rel="icon" href="images/icons/fridge.svg">
+  <title>Log in to Soonish</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html">Soonish</a>
+      <span id="user-chip" class="user-chip"></span>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fridge.html">My fridge</a></li>
+          <li><a href="problem.html">The problem</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="shelf-guide.html">Shelf guide</a></li>
+          <li><a href="fridge-rules.html">Fridge rules</a></li>
+          <li><a href="ai-rescue.html">AI rescue</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" aria-current="page">Log in</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page-title">
+      <h1>Welcome back</h1>
+      <p>Log in to see your floor. This login is simulated and works only on this device.</p>
+    </div>
+    <section class="section section-white">
+      <div class="wrap auth-layout">
+        <form id="login-form" class="form-box" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email">
+            <span id="email-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password">
+            <span id="password-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <button class="btn" type="submit">Log in</button>
+          <p id="login-message" class="form-message" role="status"></p>
+        </form>
+        <div class="card">
+          <span class="icon-tag"><img src="images/icons/fridge.svg" alt=""></span>
+          <h3>New here?</h3>
+          <p><a href="register.html">Create an account</a> first, then log in with the same email.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <h2>Soonish</h2>
+          <p>A shared-fridge helper for student dorms.</p>
+        </div>
+        <div>
+          <h2>Sources</h2>
+          <ul>
+            <li><a href="https://www.unep.org/resources/publication/food-waste-index-report-2024">UNEP Food Waste Index 2024</a></li>
+            <li><a href="https://sdgs.un.org/goals/goal12">UN SDG 12</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="contact.html">Contact and feedback</a></li>
+            <li><a href="about.html">About the project</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">Web Programming student project, 2026. All illustrations are original.</p>
+    </div>
+  </footer>
+  <script src="js/storage.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

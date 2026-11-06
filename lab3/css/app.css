@@ -1,0 +1,95 @@
+/* Soonish - styles for the JavaScript features added in Lab 3 */
+
+.auth-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+
+.field-error { display: block; min-height: 1.3em; margin-top: 3px; color: var(--tomato); font-size: 0.9rem; }
+input.is-invalid, select.is-invalid { border-color: var(--tomato); background: var(--tomato-soft); }
+input.is-valid, select.is-valid { border-color: var(--pea); }
+
+.field .check-row { display: flex; align-items: flex-start; gap: 10px; font-weight: 400; }
+.check-row input { width: 20px; height: 20px; margin-top: 4px; flex: none; }
+
+.form-message { margin: 14px 0 0; padding: 10px 14px; border-radius: 9px; font-weight: 600; }
+.form-message:empty { display: none; }
+.form-message.success { background: var(--pea-soft); color: #2b5a1f; }
+.form-message.failure { background: var(--tomato-soft); color: #93260f; }
+
+.user-chip { color: var(--muted); font-size: 0.92rem; }
+
+/* Fridge module */
+.fridge-layout { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 28px; align-items: start; }
+.field-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.fridge-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.fridge-stat { padding: 10px 14px; background: var(--milk); border: 2px solid var(--shelf); border-radius: 12px; }
+.fridge-stat strong { display: block; font: 700 1.6rem/1.2 var(--font-head); }
+.fridge-stat span { color: var(--muted); font-size: 0.9rem; }
+
+.fridge-controls { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.fridge-controls label { display: block; margin-bottom: 3px; font-size: 0.88rem; font-weight: 600; }
+
+.item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  background: var(--milk);
+  border: 2px solid var(--shelf);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.item-card.state-soon { border-color: var(--tape-dark); }
+.item-card.state-expired { border-color: var(--tomato); background: var(--tomato-soft); }
+.item-card.is-shared { outline: 2px dashed var(--pea); outline-offset: 3px; }
+
+.item-card h3 { margin: 0; }
+.item-meta { margin: 0; color: var(--muted); font-size: 0.93rem; }
+
+.badge-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge { padding: 1px 10px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; }
+.badge-fresh { background: var(--pea-soft); color: #2b5a1f; }
+.badge-soon { background: var(--tape); color: var(--ink); }
+.badge-expired { background: var(--tomato); color: var(--milk); }
+.badge-shared { background: var(--plum); color: var(--milk); }
+
+.item-actions { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 8px; }
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  background: var(--fridge);
+  border: 2px solid var(--shelf);
+  border-radius: 9px;
+  cursor: pointer;
+}
+.icon-btn:hover { border-color: var(--ink); }
+.icon-btn img { width: 20px; height: 20px; }
+.share-btn {
+  flex: 1;
+  padding: 7px 8px;
+  background: var(--milk);
+  border: 2px solid var(--ink);
+  border-radius: 9px;
+  color: var(--ink);
+  font: 600 0.9rem var(--font-body);
+  cursor: pointer;
+}
+.share-btn:hover { background: var(--tape); }
+.item-note { flex: 1; color: #93260f; font-size: 0.9rem; font-weight: 600; }
+
+.empty-state { padding: 34px 20px; background: var(--milk); border: 2px dashed var(--shelf); border-radius: var(--radius); text-align: center; color: var(--muted); }
+
+@media (max-width: 900px) {
+  .auth-layout, .fridge-layout { grid-template-columns: 1fr; }
+  .fridge-controls { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .fridge-stats { grid-template-columns: 1fr; }
+  .fridge-controls { grid-template-columns: 1fr; }
+}
