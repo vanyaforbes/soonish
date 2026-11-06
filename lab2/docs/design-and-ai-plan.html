@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Author: Abdulaziz, group 2601 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soonish: design and AI plan</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .wf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 20px; margin-top: 18px; }
+    .wf { margin: 0; }
+    .wf figcaption { margin-top: 6px; text-align: center; font-weight: 600; }
+    .map { display: grid; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+    .map li { padding: 10px 14px; background: var(--milk); border: 2px solid var(--shelf); border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="page-title">
+      <h1>Soonish: design and AI plan</h1>
+      <p>Lab 2, Part 1. Sitemap, rough designs, content plan and the planned AI feature.</p>
+    </div>
+
+    <section class="section">
+      <h2>Sitemap</h2>
+      <p>Every page links to every other page through the shared navigation.</p>
+      <ul class="map">
+        <li><strong>index.html</strong>: introduce Soonish and send people to the next step.</li>
+        <li><strong>problem.html</strong>: explain food waste with sourced facts.</li>
+        <li><strong>how-it-works.html</strong>: show the label, watch and pass-it-on habits.</li>
+        <li><strong>shelf-guide.html</strong>: look up how long food lasts and what dates mean.</li>
+        <li><strong>fridge-rules.html</strong>: print the rules a floor can agree on.</li>
+        <li><strong>ai-rescue.html</strong>: read the plan for the AI feature.</li>
+        <li><strong>about.html</strong>: see the goal and the source of every image.</li>
+        <li><strong>contact.html</strong>: send feedback through a labelled form.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Rough designs</h2>
+      <div class="wf-grid">
+<figure class="wf"><svg viewBox="0 0 220 236" role="img" aria-label="Rough design of the Home page"><rect x="1" y="1" width="218" height="234" rx="8" fill="#e9f1ef" stroke="#1e2e2b" stroke-width="2"/><rect x="12" y="10" width="196" height="18" rx="3" fill="#1e2e2b"/><text x="110" y="23" text-anchor="middle" font-size="10" fill="#fff">logo + navigation</text><rect x="12" y="34" width="196" height="74" rx="4" fill="#f4dd92" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="75" text-anchor="middle" font-size="11" fill="#1e2e2b">Intro, call to action, picture</text><rect x="12" y="114" width="196" height="46" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="141" text-anchor="middle" font-size="11" fill="#1e2e2b">Three cards</text><rect x="12" y="166" width="196" height="40" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="190" text-anchor="middle" font-size="11" fill="#1e2e2b">Facts band</text><rect x="12" y="212" width="196" height="14" rx="3" fill="#1e2e2b"/><text x="110" y="223" text-anchor="middle" font-size="9" fill="#fff">footer</text></svg><figcaption>Home</figcaption></figure>
+<figure class="wf"><svg viewBox="0 0 220 242" role="img" aria-label="Rough design of the The problem page"><rect x="1" y="1" width="218" height="240" rx="8" fill="#e9f1ef" stroke="#1e2e2b" stroke-width="2"/><rect x="12" y="10" width="196" height="18" rx="3" fill="#1e2e2b"/><text x="110" y="23" text-anchor="middle" font-size="10" fill="#fff">logo + navigation</text><rect x="12" y="34" width="196" height="26" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="51" text-anchor="middle" font-size="11" fill="#1e2e2b">Page title</text><rect x="12" y="66" width="196" height="70" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="105" text-anchor="middle" font-size="11" fill="#1e2e2b">Facts + picture</text><rect x="12" y="142" width="196" height="70" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="181" text-anchor="middle" font-size="11" fill="#1e2e2b">Picture + dorm list</text><rect x="12" y="218" width="196" height="14" rx="3" fill="#1e2e2b"/><text x="110" y="229" text-anchor="middle" font-size="9" fill="#fff">footer</text></svg><figcaption>The problem</figcaption></figure>
+<figure class="wf"><svg viewBox="0 0 220 236" role="img" aria-label="Rough design of the How it works page"><rect x="1" y="1" width="218" height="234" rx="8" fill="#e9f1ef" stroke="#1e2e2b" stroke-width="2"/><rect x="12" y="10" width="196" height="18" rx="3" fill="#1e2e2b"/><text x="110" y="23" text-anchor="middle" font-size="10" fill="#fff">logo + navigation</text><rect x="12" y="34" width="196" height="26" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="51" text-anchor="middle" font-size="11" fill="#1e2e2b">Page title</text><rect x="12" y="66" width="196" height="84" rx="4" fill="#f4dd92" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="112" text-anchor="middle" font-size="11" fill="#1e2e2b">Numbered steps + picture</text><rect x="12" y="156" width="196" height="50" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="185" text-anchor="middle" font-size="11" fill="#1e2e2b">Three cards</text><rect x="12" y="212" width="196" height="14" rx="3" fill="#1e2e2b"/><text x="110" y="223" text-anchor="middle" font-size="9" fill="#fff">footer</text></svg><figcaption>How it works</figcaption></figure>
+<figure class="wf"><svg viewBox="0 0 220 242" role="img" aria-label="Rough design of the Shelf guide page"><rect x="1" y="1" width="218" height="240" rx="8" fill="#e9f1ef" stroke="#1e2e2b" stroke-width="2"/><rect x="12" y="10" width="196" height="18" rx="3" fill="#1e2e2b"/><text x="110" y="23" text-anchor="middle" font-size="10" fill="#fff">logo + navigation</text><rect x="12" y="34" width="196" height="26" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="51" text-anchor="middle" font-size="11" fill="#1e2e2b">Page title</text><rect x="12" y="66" width="196" height="90" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="115" text-anchor="middle" font-size="11" fill="#1e2e2b">Food table + picture</text><rect x="12" y="162" width="196" height="50" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="191" text-anchor="middle" font-size="11" fill="#1e2e2b">Date label cards</text><rect x="12" y="218" width="196" height="14" rx="3" fill="#1e2e2b"/><text x="110" y="229" text-anchor="middle" font-size="9" fill="#fff">footer</text></svg><figcaption>Shelf guide</figcaption></figure>
+<figure class="wf"><svg viewBox="0 0 220 242" role="img" aria-label="Rough design of the Fridge rules page"><rect x="1" y="1" width="218" height="240" rx="8" fill="#e9f1ef" stroke="#1e2e2b" stroke-width="2"/><rect x="12" y="10" width="196" height="18" rx="3" fill="#1e2e2b"/><text x="110" y="23" text-anchor="middle" font-size="10" fill="#fff">logo + navigation</text><rect x="12" y="34" width="196" height="26" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="51" text-anchor="middle" font-size="11" fill="#1e2e2b">Page title</text><rect x="12" y="66" width="196" height="90" rx="4" fill="#f4dd92" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="115" text-anchor="middle" font-size="11" fill="#1e2e2b">Picture + four rules</text><rect x="12" y="162" width="196" height="50" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="191" text-anchor="middle" font-size="11" fill="#1e2e2b">Weekend cards</text><rect x="12" y="218" width="196" height="14" rx="3" fill="#1e2e2b"/><text x="110" y="229" text-anchor="middle" font-size="9" fill="#fff">footer</text></svg><figcaption>Fridge rules</figcaption></figure>
+<figure class="wf"><svg viewBox="0 0 220 244" role="img" aria-label="Rough design of the AI rescue page"><rect x="1" y="1" width="218" height="242" rx="8" fill="#e9f1ef" stroke="#1e2e2b" stroke-width="2"/><rect x="12" y="10" width="196" height="18" rx="3" fill="#1e2e2b"/><text x="110" y="23" text-anchor="middle" font-size="10" fill="#fff">logo + navigation</text><rect x="12" y="34" width="196" height="26" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="51" text-anchor="middle" font-size="11" fill="#1e2e2b">Page title</text><rect x="12" y="66" width="196" height="76" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="108" text-anchor="middle" font-size="11" fill="#1e2e2b">Plan + picture</text><rect x="12" y="148" width="196" height="66" rx="4" fill="#f4dd92" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="185" text-anchor="middle" font-size="11" fill="#1e2e2b">Example + limits</text><rect x="12" y="220" width="196" height="14" rx="3" fill="#1e2e2b"/><text x="110" y="231" text-anchor="middle" font-size="9" fill="#fff">footer</text></svg><figcaption>AI rescue</figcaption></figure>
+<figure class="wf"><svg viewBox="0 0 220 238" role="img" aria-label="Rough design of the About page"><rect x="1" y="1" width="218" height="236" rx="8" fill="#e9f1ef" stroke="#1e2e2b" stroke-width="2"/><rect x="12" y="10" width="196" height="18" rx="3" fill="#1e2e2b"/><text x="110" y="23" text-anchor="middle" font-size="10" fill="#fff">logo + navigation</text><rect x="12" y="34" width="196" height="26" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="51" text-anchor="middle" font-size="11" fill="#1e2e2b">Page title</text><rect x="12" y="66" width="196" height="70" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="105" text-anchor="middle" font-size="11" fill="#1e2e2b">Goal + picture</text><rect x="12" y="142" width="196" height="66" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="179" text-anchor="middle" font-size="11" fill="#1e2e2b">Sources table</text><rect x="12" y="214" width="196" height="14" rx="3" fill="#1e2e2b"/><text x="110" y="225" text-anchor="middle" font-size="9" fill="#fff">footer</text></svg><figcaption>About</figcaption></figure>
+<figure class="wf"><svg viewBox="0 0 220 216" role="img" aria-label="Rough design of the Contact page"><rect x="1" y="1" width="218" height="214" rx="8" fill="#e9f1ef" stroke="#1e2e2b" stroke-width="2"/><rect x="12" y="10" width="196" height="18" rx="3" fill="#1e2e2b"/><text x="110" y="23" text-anchor="middle" font-size="10" fill="#fff">logo + navigation</text><rect x="12" y="34" width="196" height="26" rx="4" fill="#ffffff" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="51" text-anchor="middle" font-size="11" fill="#1e2e2b">Page title</text><rect x="12" y="66" width="196" height="120" rx="4" fill="#f4dd92" stroke="#1e2e2b" stroke-width="1.5"/><text x="110" y="130" text-anchor="middle" font-size="11" fill="#1e2e2b">Labelled form + note</text><rect x="12" y="192" width="196" height="14" rx="3" fill="#1e2e2b"/><text x="110" y="203" text-anchor="middle" font-size="9" fill="#fff">footer</text></svg><figcaption>Contact</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Design choices</h2>
+      <p>The look comes from a real dorm fridge: cold pale shelves, masking-tape labels and marker handwriting. Colours are defined once in CSS variables. Headings use a slab serif, text uses a clean sans-serif, and the handwritten font appears only on labels.</p>
+    </section>
+
+    <section class="section">
+      <h2>What users can do on the finished website</h2>
+      <ul class="tick-list">
+        <li>Learn why food waste matters and how a shared fridge adds to it.</li>
+        <li>Look up storage times and print fridge rules.</li>
+        <li>Later: add food, see dates, and pass food on to neighbours.</li>
+        <li>Later: ask for a recipe built around the most urgent food.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>AI plan: Rescue Recipes</h2>
+      <div class="table-box">
+        <table>
+          <tbody>
+            <tr><th scope="row">Purpose</th><td>Help students cook food close to its date instead of throwing it away.</td></tr>
+            <tr><th scope="row">Input</th><td>Items expiring within two days, their portions, and an optional diet choice.</td></tr>
+            <tr><th scope="row">Output</th><td>Up to three cheap recipes. Each one uses the most urgent item first and lists what is missing.</td></tr>
+            <tr><th scope="row">Place on the site</th><td>A Rescue button above the shared fridge list. Results open in a panel.</td></tr>
+            <tr><th scope="row">Approach</th><td>Connect an API and use an existing model. We will not train a model, because we have no recipe data set and a general language model already knows cooking.</td></tr>
+            <tr><th scope="row">Model or service</th><td>Claude through the Anthropic Messages API, with a small fast model such as claude-haiku-5-5.</td></tr>
+            <tr><th scope="row">Integration plan</th><td>The browser sends the item list to a small server. The server keeps the secret API key, adds instructions, calls the model and returns the recipes as JSON. The website then renders them as cards.</td></tr>
+            <tr><th scope="row">Main limits</th><td>The model can make mistakes, cannot judge if food is safe, and does not know allergies unless told. Each request costs money and needs internet access. Labs 2 and 3 do not allow a backend, so the feature stays a plan.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 style="margin-top:22px">Interface sketch and example result</h3>
+      <div class="ai-example">
+        <p><strong>[ Rescue 3 items ]</strong> &nbsp; kefir (today), rice (1 day), carrots (2 days)</p>
+        <p><strong>Carrot rice with a kefir sauce.</strong> Fry the grated carrots, add the rice, then serve with kefir, salt and garlic. Still needed: oil, garlic.</p>
+        <p>This example was written by hand to show the planned result.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

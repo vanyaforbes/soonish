@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img"><title>Food on a shelf with day counters from fresh to urgent</title>
+<rect width="520" height="340" rx="20" fill="#ffffff"/>
+<rect x="30" y="232" width="460" height="12" fill="#d5e2de" stroke="#1e2e2b" stroke-width="3"/>
+<rect x="64" y="118" width="72" height="12" rx="3" fill="#1e2e2b"/><rect x="58" y="128" width="84" height="104" rx="10" fill="#e0efd8" stroke="#1e2e2b" stroke-width="3"/><rect x="204" y="152" width="112" height="80" rx="8" fill="#f4dd92" stroke="#1e2e2b" stroke-width="3"/><rect x="200" y="142" width="120" height="14" rx="5" fill="#1e2e2b" stroke="#1e2e2b" stroke-width="3"/><rect x="384" y="118" width="72" height="12" rx="3" fill="#1e2e2b"/><rect x="378" y="128" width="84" height="104" rx="10" fill="#fbe3dc" stroke="#1e2e2b" stroke-width="3"/>
+<text x="100" y="186" text-anchor="middle" font-size="30" fill="#3f7a2f" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">5</text>
+<text x="260" y="198" text-anchor="middle" font-size="30" fill="#1e2e2b" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">2</text>
+<text x="420" y="186" text-anchor="middle" font-size="30" fill="#c8391e" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">0</text>
+<text x="100" y="282" text-anchor="middle" font-size="19" fill="#1e2e2b" font-family="Segoe UI, Arial, sans-serif">fresh</text>
+<text x="260" y="282" text-anchor="middle" font-size="19" fill="#1e2e2b" font-family="Segoe UI, Arial, sans-serif">eat soon</text>
+<text x="420" y="282" text-anchor="middle" font-size="19" fill="#1e2e2b" font-family="Segoe UI, Arial, sans-serif">eat today</text>
+<text x="260" y="70" text-anchor="middle" font-size="24" fill="#1e2e2b" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive" font-weight="700">days left</text></svg>
