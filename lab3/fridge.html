@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- Author: Abdulaziz, group 2601 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Add, edit and share the food in your dorm fridge.">
+  <link rel="icon" href="images/icons/fridge.svg">
+  <title>My fridge: the shared food list | Soonish</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="index.html">Soonish</a>
+      <span id="user-chip" class="user-chip"></span>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fridge.html" aria-current="page">My fridge</a></li>
+          <li><a href="problem.html">The problem</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="shelf-guide.html">Shelf guide</a></li>
+          <li><a href="fridge-rules.html">Fridge rules</a></li>
+          <li><a href="ai-rescue.html">AI rescue</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page-title">
+      <h1>The shared fridge</h1>
+      <p>Everything on your floor, closest date first. Food stays saved in this browser after a refresh.</p>
+    </div>
+    <section class="section section-white">
+      <div class="wrap fridge-layout">
+        <form id="item-form" class="form-box" novalidate>
+          <h2 id="form-title">Add food</h2>
+          <div class="field">
+            <label for="name">Food</label>
+            <input id="name" name="name" type="text">
+            <span id="name-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option value="">Choose</option>
+              <option>Leftovers</option>
+              <option>Dairy</option>
+              <option>Vegetables</option>
+              <option>Fruit</option>
+              <option>Meat</option>
+              <option>Other</option>
+            </select>
+            <span id="category-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="owner">Owner</label>
+            <input id="owner" name="owner" type="text">
+            <span id="owner-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field-pair">
+          <div class="field">
+            <label for="shelf">Shelf</label>
+            <input id="shelf" name="shelf" type="number" min="1" max="5">
+            <span id="shelf-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="portions">Portions</label>
+            <input id="portions" name="portions" type="number" min="1" max="50">
+            <span id="portions-error" class="field-error" aria-live="polite"></span>
+          </div>
+          </div>
+          <div class="field">
+            <label for="expiryDate">Eat by</label>
+            <input id="expiryDate" name="expiryDate" type="date">
+            <span id="expiryDate-error" class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label class="check-row" for="shared">
+              <input id="shared" name="shared" type="checkbox">
+              <span>Up for grabs: anyone can take it</span>
+            </label>
+          </div>
+          <div class="form-buttons">
+            <button id="submit-button" class="btn" type="submit">Put in the fridge</button>
+            <button id="cancel-button" class="btn btn-plain" type="button" hidden>Cancel</button>
+          </div>
+          <p id="fridge-message" class="form-message" role="status"></p>
+        </form>
+
+        <div>
+          <div class="fridge-stats">
+            <div class="fridge-stat"><strong id="stat-total">0</strong><span>items</span></div>
+            <div class="fridge-stat"><strong id="stat-soon">0</strong><span>to eat soon</span></div>
+            <div class="fridge-stat"><strong id="stat-shared">0</strong><span>up for grabs</span></div>
+          </div>
+          <div class="fridge-controls">
+            <div>
+              <label for="search">Search</label>
+              <input id="search" type="search" placeholder="Food or owner">
+            </div>
+            <div>
+              <label for="state-filter">Status</label>
+              <select id="state-filter">
+                <option value="all">All</option>
+                <option value="soon">Eat soon</option>
+                <option value="fresh">Fresh</option>
+                <option value="expired">Expired</option>
+                <option value="shared">Up for grabs</option>
+              </select>
+            </div>
+            <div>
+              <label for="category-filter">Category</label>
+              <select id="category-filter">
+                <option value="all">All</option>
+                <option>Leftovers</option>
+                <option>Dairy</option>
+                <option>Vegetables</option>
+                <option>Fruit</option>
+                <option>Meat</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="sort">Sort by</label>
+              <select id="sort">
+                <option value="expiry">Closest date</option>
+                <option value="name">Name</option>
+                <option value="portions">Most portions</option>
+              </select>
+            </div>
+          </div>
+          <div id="item-grid" class="item-grid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <h2>Soonish</h2>
+          <p>A shared-fridge helper for student dorms.</p>
+        </div>
+        <div>
+          <h2>Sources</h2>
+          <ul>
+            <li><a href="https://www.unep.org/resources/publication/food-waste-index-report-2024">UNEP Food Waste Index 2024</a></li>
+            <li><a href="https://sdgs.un.org/goals/goal12">UN SDG 12</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Get in touch</h2>
+          <ul>
+            <li><a href="contact.html">Contact and feedback</a></li>
+            <li><a href="about.html">About the project</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">Web Programming student project, 2026. All illustrations are original.</p>
+    </div>
+  </footer>
+  <script src="js/storage.js"></script>
+  <script src="js/fridge.js"></script>
+</body>
+</html>
