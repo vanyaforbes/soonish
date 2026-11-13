@@ -1,0 +1,16 @@
+{
+  "name": "soonish-server",
+  "version": "1.0.0",
+  "description": "Express backend for Soonish (Lab 5)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Abdulaziz",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
