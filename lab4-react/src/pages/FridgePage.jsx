@@ -3,23 +3,12 @@ import FilterBar from "../components/FilterBar.jsx";
 import FoodForm from "../components/FoodForm.jsx";
 import FoodList from "../components/FoodList.jsx";
 import FridgeStats from "../components/FridgeStats.jsx";
-import { createId, createSampleItems } from "../data/sampleItems.js";
+import { addFood, deleteFood, getFood, updateFood } from "../utils/api.js";
 import { daysLeft, getFreshness } from "../utils/freshness.js";
-import { STORAGE_KEYS, readJSON, writeJSON } from "../utils/storage.js";
 
 const DEFAULT_FILTERS = { query: "", state: "all", category: "all", sort: "expiry" };
-
-// Runs once. Handles missing and damaged saved data, like loadItems() in Lab 3.
-function loadInitialState() {
-  const saved = readJSON(STORAGE_KEYS.items, null);
-  if (!saved.ok || (!saved.missing && !Array.isArray(saved.value))) {
-    return { items: [], message: { kind: "failure", text: "Saved data was damaged, so the list was reset." } };
-  }
-  if (saved.missing) {
-    return { items: createSampleItems(), message: { kind: "", text: "" } };
-  }
-  return { items: saved.value, message: { kind: "", text: "" } };
-}
+const NO_MESSAGE = { kind: "", text: "" };
+const SERVER_DOWN = "Could not reach the server. Start it with npm start in the server folder.";
 
 function getVisibleItems(items, filters) {
   const query = filters.query.trim().toLowerCase();
@@ -45,65 +34,118 @@ function getVisibleItems(items, filters) {
 }
 
 export default function FridgePage() {
-  const [initial] = useState(loadInitialState);
-  const [items, setItems] = useState(initial.items);
-  const [message, setMessage] = useState(initial.message);
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
+  const [message, setMessage] = useState(NO_MESSAGE);
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [editingItem, setEditingItem] = useState(null);
 
-  // Every change to the array is written to localStorage automatically.
-  useEffect(() => {
-    if (!writeJSON(STORAGE_KEYS.items, items)) {
-      setMessage({ kind: "failure", text: "Changes could not be saved in this browser." });
-    }
-  }, [items]);
-
-  function handleSave(data) {
-    if (editingItem) {
-      setItems((current) => current.map((item) => (item.id === editingItem.id ? { ...item, ...data } : item)));
-      setMessage({ kind: "success", text: "Updated " + data.name + "." });
-      setEditingItem(null);
-    } else {
-      setItems((current) => [...current, { id: createId(), ...data }]);
-      setMessage({ kind: "success", text: "Added " + data.name + "." });
+  // Asks the server for the list: GET /api/food.
+  async function loadFood() {
+    setLoading(true);
+    setLoadError("");
+    try {
+      const data = await getFood();
+      setItems(data);
+    } catch (error) {
+      console.error(error);
+      setLoadError(SERVER_DOWN);
+    } finally {
+      setLoading(false);
     }
   }
 
-  function handleDelete(item) {
+  // Runs once, when the page opens.
+  useEffect(() => {
+    loadFood();
+  }, []);
+
+  async function handleSave(data) {
+    try {
+      if (editingItem) {
+        const updated = await updateFood(editingItem.id, data);
+        setItems((current) => current.map((item) => (item.id === updated.id ? updated : item)));
+        setMessage({ kind: "success", text: "Updated " + updated.name + "." });
+        setEditingItem(null);
+      } else {
+        const created = await addFood(data);
+        setItems((current) => [...current, created]);
+        setMessage({ kind: "success", text: "Added " + created.name + "." });
+      }
+      return true;
+    } catch (error) {
+      console.error(error);
+      setMessage({ kind: "failure", text: "Not saved. " + SERVER_DOWN });
+      return false;
+    }
+  }
+
+  async function handleDelete(item) {
     if (!window.confirm("Remove " + item.name + " from the fridge?")) {
       return;
     }
-    setItems((current) => current.filter((entry) => entry.id !== item.id));
-    setMessage({ kind: "success", text: "Removed " + item.name + "." });
-    if (editingItem && editingItem.id === item.id) {
-      setEditingItem(null);
+    try {
+      await deleteFood(item.id);
+      setItems((current) => current.filter((entry) => entry.id !== item.id));
+      setMessage({ kind: "success", text: "Removed " + item.name + "." });
+      if (editingItem && editingItem.id === item.id) {
+        setEditingItem(null);
+      }
+    } catch (error) {
+      console.error(error);
+      setMessage({ kind: "failure", text: "Not removed. " + SERVER_DOWN });
     }
   }
 
-  function handleToggleShared(id) {
-    setItems((current) => current.map((item) => (item.id === id ? { ...item, shared: !item.shared } : item)));
+  async function handleToggleShared(id) {
+    const item = items.find((entry) => entry.id === id);
+    try {
+      const updated = await updateFood(id, { shared: !item.shared });
+      setItems((current) => current.map((entry) => (entry.id === id ? updated : entry)));
+    } catch (error) {
+      console.error(error);
+      setMessage({ kind: "failure", text: SERVER_DOWN });
+    }
+  }
+
+  function renderList() {
+    if (loading) {
+      return <p className="empty-state" role="status">Loading the fridge from the server...</p>;
+    }
+    if (loadError) {
+      return (
+        <div className="empty-state load-error" role="alert">
+          <p>{loadError}</p>
+          <button className="btn" type="button" onClick={loadFood}>Try again</button>
+        </div>
+      );
+    }
+    return (
+      <>
+        <FridgeStats items={items} />
+        <FilterBar filters={filters} onChange={setFilters} />
+        <FoodList
+          items={getVisibleItems(items, filters)}
+          totalCount={items.length}
+          onEdit={setEditingItem}
+          onDelete={handleDelete}
+          onToggleShared={handleToggleShared}
+        />
+      </>
+    );
   }
 
   return (
     <>
       <div className="wrap page-title">
         <h1>The shared fridge</h1>
-        <p>Everything on your floor, closest date first. Food stays saved in this browser after a refresh.</p>
+        <p>Everything on your floor, closest date first. The list is kept on the Soonish server, so the whole floor sees the same fridge.</p>
       </div>
       <section className="section section-white">
         <div className="wrap fridge-layout">
           <FoodForm editingItem={editingItem} onSave={handleSave} onCancel={() => setEditingItem(null)} message={message} />
-          <div>
-            <FridgeStats items={items} />
-            <FilterBar filters={filters} onChange={setFilters} />
-            <FoodList
-              items={getVisibleItems(items, filters)}
-              totalCount={items.length}
-              onEdit={setEditingItem}
-              onDelete={handleDelete}
-              onToggleShared={handleToggleShared}
-            />
-          </div>
+          <div>{renderList()}</div>
         </div>
       </section>
     </>

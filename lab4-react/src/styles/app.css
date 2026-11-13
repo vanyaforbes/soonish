@@ -84,6 +84,8 @@ input.is-valid, select.is-valid { border-color: var(--pea); }
 .item-note { flex: 1; color: #93260f; font-size: 0.9rem; font-weight: 600; }
 
 .empty-state { padding: 34px 20px; background: var(--milk); border: 2px dashed var(--shelf); border-radius: var(--radius); text-align: center; color: var(--muted); }
+.load-error { border-color: var(--tomato); background: var(--tomato-soft); color: #93260f; font-weight: 600; }
+.load-error p { margin: 0 0 14px; }
 
 @media (max-width: 900px) {
   .auth-layout, .fridge-layout { grid-template-columns: 1fr; }

@@ -27,7 +27,11 @@ Open the address shown in the terminal, usually http://localhost:5173. To make a
 
 ## One event handler explained
 
-`handleToggleShared(id)` in FridgePage is passed down through FoodList to FoodCard as the `onToggleShared` prop. A click on **Pass it on** calls it, and `setItems()` creates a new array. React re-renders the cards, and `useEffect` saves the array to localStorage.
+`handleToggleShared(id)` in FridgePage is passed down through FoodList to FoodCard as the `onToggleShared` prop. A click on **Pass it on** calls it, and `setItems()` creates a new array. React re-renders the cards.
+
+## Lab 5: data from the server
+
+Since Lab 5 the fridge list is not in localStorage any more. FridgePage loads it from the Express server (`../server`) with `fetch()` in `src/utils/api.js`, and shows a loading message and an error message with **Try again**. `vite.config.js` sends `/api` requests to http://localhost:3000. Start the server first: see the main `README.md`.
 
 ## Screenshots
 

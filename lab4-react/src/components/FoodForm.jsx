@@ -20,7 +20,7 @@ export default function FoodForm({ editingItem, onSave, onCancel, message }) {
     setValues((current) => ({ ...current, [name]: type === "checkbox" ? checked : value }));
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const data = {
       name: values.name.trim(),
@@ -34,8 +34,11 @@ export default function FoodForm({ editingItem, onSave, onCancel, message }) {
     const foundErrors = validateItem(data, editingItem !== null);
     setErrors(foundErrors);
     if (Object.keys(foundErrors).length === 0) {
-      onSave(data);
-      setValues(EMPTY_FORM);
+      // onSave sends the data to the server. Clear the form only if the server accepted it.
+      const saved = await onSave(data);
+      if (saved) {
+        setValues(EMPTY_FORM);
+      }
     }
   }
 
