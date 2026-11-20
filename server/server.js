@@ -3,9 +3,12 @@
 const express = require("express");
 const { food, createId } = require("./data.js");
 const { validateFood } = require("./validators.js");
+const { findRecipes } = require("./recipes.js");
+const { suggestCategory, getClassifier, MODEL } = require("./ai.js");
 
 const app = express();
-const PORT = 3000;
+// Settings come from the .env file (see .env.example).
+const PORT = Number(process.env.PORT) || 3000;
 
 // Turns a JSON request body into req.body.
 app.use(express.json());
@@ -65,6 +68,42 @@ app.delete("/api/food/:id", (req, res) => {
   res.status(204).end();
 });
 
+// EXTERNAL API: recipe ideas from TheMealDB for food that should be eaten soon.
+// Example: GET /api/recipes?ingredient=chicken
+app.get("/api/recipes", async (req, res) => {
+  const ingredient = typeof req.query.ingredient === "string" ? req.query.ingredient.trim() : "";
+  if (ingredient.length < 2 || ingredient.length > 40) {
+    return res.status(400).json({ error: "Write an ingredient, 2 to 40 letters." });
+  }
+  try {
+    const result = await findRecipes(ingredient);
+    res.json(result);
+  } catch (error) {
+    console.error("TheMealDB error:", error.message);
+    res.status(502).json({ error: "The recipe service is not answering. Try again later." });
+  }
+});
+
+// AI: suggest a category for a food name typed in the form.
+// Example: POST /api/ai/category with { "name": "Yogurt" }
+app.post("/api/ai/category", async (req, res) => {
+  const name = typeof req.body.name === "string" ? req.body.name.trim() : "";
+  if (name.length < 2 || name.length > 60) {
+    return res.status(400).json({ error: "Write the food name first, 2 to 60 letters." });
+  }
+  try {
+    const suggestion = await suggestCategory(name);
+    res.json({ name, ...suggestion, model: MODEL });
+  } catch (error) {
+    console.error("AI error:", error.message);
+    res.status(503).json({ error: "The AI model is not ready. Try again in a minute." });
+  }
+});
+
 app.listen(PORT, () => {
   console.log("Soonish server is running on http://localhost:" + PORT);
+  // Load the AI model in the background, so the first question is fast.
+  getClassifier()
+    .then(() => console.log("AI model is ready: " + MODEL))
+    .catch((error) => console.error("AI model could not load:", error.message));
 });
