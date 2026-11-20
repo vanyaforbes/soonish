@@ -3,3 +3,6 @@ dist
 submissions
 *.log
 .idea
+
+.env
+.model-cache

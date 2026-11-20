@@ -1,16 +1,17 @@
 {
   "name": "soonish-server",
   "version": "1.0.0",
-  "description": "Express backend for Soonish (Lab 5)",
+  "description": "Express backend for Soonish (Labs 5-6)",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node --env-file-if-exists=.env server.js"
   },
   "keywords": [],
   "author": "Abdulaziz",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@huggingface/transformers": "^4.3.2",
     "express": "^5.3.0"
   }
 }
