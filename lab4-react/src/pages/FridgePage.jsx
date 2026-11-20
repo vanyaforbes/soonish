@@ -3,6 +3,7 @@ import FilterBar from "../components/FilterBar.jsx";
 import FoodForm from "../components/FoodForm.jsx";
 import FoodList from "../components/FoodList.jsx";
 import FridgeStats from "../components/FridgeStats.jsx";
+import RecipeIdeas from "../components/RecipeIdeas.jsx";
 import { addFood, deleteFood, getFood, updateFood } from "../utils/api.js";
 import { daysLeft, getFreshness } from "../utils/freshness.js";
 
@@ -148,6 +149,7 @@ export default function FridgePage() {
           <div>{renderList()}</div>
         </div>
       </section>
+      {!loading && !loadError && <RecipeIdeas items={items} />}
     </>
   );
 }
